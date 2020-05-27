@@ -23,4 +23,4 @@ OK, so someone has already created a repo and shared it on a Git hosting site an
 
 We've got a repo checked out, and now want to do some work. The first thing to do is to create and checkout a new branch. This can be done with the command `git checkout -b <branch-name>`.
 
-The flag `-b` tells the checkout command you want to create a new branch. Following this command, you will have a new local branch and it will be checked out to your working directory.
+The flag `-b` tells the checkout command we want to create a new branch. Following this command, we will have a new local branch and it will be checked out to the working directory.
