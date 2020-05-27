@@ -39,3 +39,7 @@ To push the current branch and set the remote upstream, used
 This is due to how git handles branches, when a new branch is created locally there is no equivalent branch on the remote repository to push the changes to, and no local tracking branch. So we can do as git suggests and use the flag `--set-upstream` or `-u` specifying which remote repository (origin) and the name of the branch we are pushing.
 
 Now we have a new branch on the remote repository which matches our local branch. We can continue adding commits to the local branch, these commits will not be on the remote branch, our local branch is 'ahead' of the remote branch. This time round, as our local branch is already configured to know where the upstream branch is, we can simply use `git push`.
+
+## Getting changes from the remote repository
+
+A PR has been raised and merged into master on the Git hosting site
