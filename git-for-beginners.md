@@ -15,6 +15,7 @@ OK, so someone has already created a repo and shared it on a Git hosting site an
 `git clone [URI]` when run without any additional parameters will:
 - Create a new directory named after the repository. In the example here, that would be `git-guides`.
 - Clones the entire repository from the server into a sub directory named `.git`
+- Sets a remote repository link named `origin`
 - Checks out the `master` branch into the working directory.
 
 ## Branching
@@ -24,3 +25,17 @@ OK, so someone has already created a repo and shared it on a Git hosting site an
 We've got a repo checked out, and now want to do some work. The first thing to do is to create and checkout a new branch. This can be done with the command `git checkout -b <branch-name>`.
 
 The flag `-b` tells the checkout command we want to create a new branch. Following this command, we will have a new local branch and it will be checked out to the working directory.
+
+### Pushing a branch to the remote repository
+
+At this point in time, the new branch only exists on the local machine. Once you've added some commits, we are ready to push up to the remote repository in order to open a pull request. The command to push is `git push`, however running that command will result in an error:
+```
+$ git push
+fatal: The current branch <branch-name> has no upstream branch.
+To push the current branch and set the remote upstream, used
+
+  git push --set-upstream origin <branch-name>
+```
+This is due to how git handles branches, when a new branch is created locally there is no equivalent branch on the remote repository to push the changes to, and no local tracking branch. So we can do as git suggests and use the flag `--set-upstream` or `-u` specifying which remote repository (origin) and the name of the branch we are pushing.
+
+Now we have a new branch on the remote repository which matches our local branch. We can continue adding commits to the local branch, these commits will not be on the remote branch, our local branch is 'ahead' of the remote branch. This time round, as our local branch is already configured to know where the upstream branch is, we can simply use `git push`.
