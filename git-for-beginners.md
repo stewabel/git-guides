@@ -10,7 +10,7 @@ The intention of this guide is to provide the basic commands and techniques you 
 
 ## Cloning a repo from BitBucket/GitHub
 
-OK, so someone has already created a repo and shared it on a Git hosting site and we want to work on this for the first time. The command you need is `git clone [URI]`. If we navigate to the web interface for the repository on the Git hosting site, we will see an example git clone with the URI, for example `git clone git@github.com:stewabel/git-guides.git`.
+OK, so someone has already created a repo and shared it on a Git hosting site and we want to work on this for the first time. The command we need is `git clone [URI]`. If we navigate to the web interface for the repository on the Git hosting site, we will see an example git clone with the URI, for example `git clone git@github.com:stewabel/git-guides.git`.
 
 `git clone [URI]` when run without any additional parameters will:
 - Create a new directory named after the repository. In the example here, that would be `git-guides`.
