@@ -42,4 +42,21 @@ Now we have a new branch on the remote repository which matches our local branch
 
 ## Getting changes from the remote repository
 
-A PR has been raised and merged into master on the Git hosting site
+A PR has been raised and merged into master on the Git hosting site, so how do we get those changes locally? The most forward way is pull the changes. In order to do that we first need to checkout the master branch:
+
+```
+$ git checkout master
+```
+
+This updates our working directory to our local copy of the master branch, if we now pull
+
+```
+$ git pull
+```
+
+then we will have retrieved the changes to master which are in the remote repository, merged them into our local master branch, and checked out the new HEAD of the master branch into our local working directory. Thats quite a lot of things happening with that simple `push` command, lets explore in some more detail
+
+Essentially `git pull` combines a couple of commands; `git fetch` and `git merge`, let's take a look at these commands.
+
+### fetch
+The first stage of git pull is to fetch changes from the remote repository into our local tracking branch (more on these later).
