@@ -92,7 +92,7 @@ Be aware that at this point in time, the changes are only committed in our local
 
 At any point in time, to see what changes are pending, we can run `git status` resulting in an output similar to the following:
 ```
-$git status
+$ git status
 On branch master
 Your branch is up to date with 'origin/master'.
 
