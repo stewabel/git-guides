@@ -103,3 +103,8 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+# Digging deeper into git commands
+The git manual can be accessed from the command line by running 'man git'.
+
+Detail for a specific git command can be found by running 'git <command> --help'
