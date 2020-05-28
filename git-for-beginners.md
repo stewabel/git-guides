@@ -68,3 +68,38 @@ The first stage of git pull is to fetch changes from the remote repository into 
 
 ### merge
 The next stage is to merge the changes into our local branch. We are now up to date. The reason a merge is performed is that there could be a situation where we have added commits to our local branch which don't yet exist on the remote branch.
+
+## Adding commits
+
+After adding, making changes to or deleting files, the changes will not yet have been tracked by git. We need to add the changes to the staging area. In effect, the staging area is essentially a temporary branch which allows you to prepare a commit before adding it to the repository. We then commit the changes to the currently checked out branch, and we can then push to the remote repository following the procedure above.
+
+The outline of the steps is:
+- Ensure you have checked out the branch you intend to commit to
+- Add the changes to the staging area
+- Commit to the branch
+
+To add all changes to the staging area, the simplest approach is to ensure we are in the root folder of the repository and then run
+```
+$ git add .
+```
+
+All changes will be now staged. Next commit
+```
+$ git commit -m "<commit message>"
+```
+
+If we are ready, we can now push the changes to the remote or continue adding subsequent commits.
+
+At any point in time, to see what changes are pending, we can run `git status` resulting in an output similar to the following:
+```
+$git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   git-for-beginners.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
