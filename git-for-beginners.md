@@ -59,4 +59,7 @@ then we will have retrieved the changes to master which are in the remote reposi
 Essentially `git pull` combines a couple of commands; `git fetch` and `git merge`, let's take a look at these commands.
 
 ### fetch
-The first stage of git pull is to fetch changes from the remote repository into our local tracking branch (more on these later).
+The first stage of git pull is to fetch changes from the remote repository into our local repository. At this point the local copy of the branch is not yet updated, but the commits have been fetched.
+
+### merge
+The next stage is to merge the changes into our local branch. We are now up to date. The reason a merge is performed is that there could be a situation where we have added commits to our local branch which don't yet exist on the remote branch.
