@@ -40,6 +40,11 @@ This is due to how git handles branches, when a new branch is created locally th
 
 Now we have a new branch on the remote repository which matches our local branch. We can continue adding commits to the local branch, these commits will not be on the remote branch, our local branch is 'ahead' of the remote branch. This time round, as our local branch is already configured to know where the upstream branch is, we can simply use `git push`.
 
+### Checking out an existing branch
+
+First of all, run a `git fetch` to ensure you have all the latest changes from the origin repository. Then `git checkout <branch-name>`. If this is not the first time you have checked this branch out, run `git merge` to ensure your local branch is up to date.
+
+
 ## Getting changes from the remote repository
 
 A PR has been raised and merged into master on the Git hosting site, so how do we get those changes locally? The most forward way is pull the changes. In order to do that we first need to checkout the master branch:
@@ -59,7 +64,7 @@ then we will have retrieved the changes to master which are in the remote reposi
 Essentially `git pull` combines a couple of commands; `git fetch` and `git merge`, let's take a look at these commands.
 
 ### fetch
-The first stage of git pull is to fetch changes from the remote repository into our local repository. At this point the local copy of the branch is not yet updated, but the commits have been fetched.
+The first stage of git pull is to fetch changes from the remote repository into our local repository. At this point the local copy of the branch is not yet updated, but the commits have been fetched for all branches.
 
 ### merge
 The next stage is to merge the changes into our local branch. We are now up to date. The reason a merge is performed is that there could be a situation where we have added commits to our local branch which don't yet exist on the remote branch.
